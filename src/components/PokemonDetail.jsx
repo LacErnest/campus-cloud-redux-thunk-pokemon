@@ -1,5 +1,9 @@
 
 
 export default function PokemonDetail(){
-  return
+  return(
+    <div>
+      <p>Salut</p>
+    </div>
+  )
 }
