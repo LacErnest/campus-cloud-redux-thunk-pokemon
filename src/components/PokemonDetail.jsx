@@ -1,9 +1,9 @@
 
 
-export default function PokemonDetail(){
+export default function PokemonDetail({id}){
   return(
     <div>
-      <p>Salut</p>
+      <p>Salut {id}</p>
     </div>
   )
 }
