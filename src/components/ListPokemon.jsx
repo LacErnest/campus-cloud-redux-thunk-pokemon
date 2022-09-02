@@ -22,10 +22,8 @@ export default function ListPokemon(){
 
   useEffect(() => {
     console.log('useeffect')
-    if(pokemons.length < 1 ){
-      dispatch(fetchingPokemons())
-    }
-  }, [pokemons])
+    dispatch(fetchingPokemons())
+  }, [])
 
   console.log(pokemons)
   

@@ -21,10 +21,10 @@ export default function PokemonDetail(){
 
   console.log("hors useeffect detail", data)
 
-  const infos = loading ? <div>Chargement des informations...</div> : <Card>
+  const infos = loading ? <div>Chargement des informations...</div> : <Card sx={{ maxwidth: 300 }}>
     <CardHeader
       avatar={
-        <Avatar sx={{ bgcolor: red }} >
+        <Avatar sx={{ bgcolor: red[500] }} >
           P
         </Avatar>
       }
