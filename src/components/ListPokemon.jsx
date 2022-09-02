@@ -11,15 +11,21 @@ export default function ListPokemon(){
   const loading = useSelector((store) => store.loading)
 
   useEffect(() => {
-    dispatch(fetchingPokemons())
-  }, [])
+    console.log('useeffect')
+    if(pokemons.length < 1 ){
+      dispatch(fetchingPokemons())
+    }
+  }, [pokemons])
 
-  const pokemonList = pokemons.map(pokemon => <div><h2>{pokemon.name}</h2> <button onClick={() => history('/pokemen:id')}></button> <br /></div>)
-
+  console.log(pokemons.results)
+  
+  //const pokemonList = pokemons.results.map(pokemon => <div><h2>{pokemon.name}</h2> <button onClick={() => history('/pokemen:id')}></button> <br /></div>)
+  
   return(
     <div>
       <h1>Liste des Pokemons</h1>
-      {loading ? <div>Chargement des pokemons ...</div> : <div>{pokemonList}</div>}
+      {loading ? <div>Chargement des pokemons ...</div> : 
+      pokemons.results.map(pokemon => <div><h2>{pokemon.name}</h2> <button onClick={() => history('/pokemen:id')}></button> <br /></div>}
     </div>
   )
 }
