@@ -19,7 +19,7 @@ export default function ListPokemon(){
 
   console.log(pokemons)
   
-  const pokemonList = !pokemons.results ? <p>Erreur lors de la récupération des pokemons</p> : pokemons.results.map((pokemon,index) => <div key={index}><h2>{pokemon.name}</h2> <button onClick={() => history('/pokemen:id')}></button> <br /></div>)
+  const pokemonList = !pokemons.results ? <p>Erreur lors de la récupération des pokemons</p> : pokemons.results.map((pokemon, index) => <div key={index}><h2>{pokemon.name}</h2> <button onClick={() => history('/pokemen:id')}>Details</button> <br /></div>)
   
   return(
     <div>
