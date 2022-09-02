@@ -12,7 +12,7 @@ export default function ListPokemon(){
 
 
   const getId = (url) => {
-    let monArr = url.splice('/')
+    let monArr = url.split('/')
     let id = monArr[monArr.length-1]
     console.log(id)
     return id
