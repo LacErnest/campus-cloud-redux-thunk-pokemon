@@ -33,7 +33,7 @@ export default function PokemonDetail(){
         }
         action={
             <IconButton aria-label="settings">
-              <MoreVertIcon />
+              {/**<MoreVertIcon />*/}
             </IconButton>
           }
         title={data.species.name}
