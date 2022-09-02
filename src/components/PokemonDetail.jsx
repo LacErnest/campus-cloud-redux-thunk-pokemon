@@ -16,41 +16,43 @@ export default function PokemonDetail(){
 
   useEffect(() =>{
     dispatch(fetchingPokemon(id))
-    console.log(data)
+    console.log("data", data)
   }, [])
 
   console.log("hors useeffect", data)
 
-  const infos = ''
+  const infos = data ? <div>Chargement des informations...</div> : <Card>
+    <CardHeader
+      avatar={
+        <Avatar sx={{ bgcolor: red }} >
+          P
+        </Avatar>
+      }
+      action={
+        <IconButton aria-label="settings">
+          {/**<MoreVertIcon />*/}
+        </IconButton>
+      }
+      title={data.species.name}
+    />
+    <CardMedia
+      component="img"
+      height="auto"
+      image={data.sprites.versions.generation - v.black - white.animated.front_default}
+      alt={data.species.name}
+    />
+    <CardContent>
+      <Typography variant="body2" color="text.secondary">
+        {data.abilities.map((ability, index) => {
+          <p key={index}>{ability.name}</p>
+        })}
+      </Typography>
+    </CardContent>
+  </Card>
 
   return(
-    <Card>
-      <CardHeader 
-        avatar ={
-          <Avatar sx={{ bgcolor: red }} >
-            P
-          </Avatar>
-        }
-        action={
-            <IconButton aria-label="settings">
-              {/**<MoreVertIcon />*/}
-            </IconButton>
-          }
-        title={data.species.name}
-      />
-      <CardMedia
-        component="img"
-        height="auto"
-        image={data.sprites.versions.generation-v.black-white.animated.front_default}
-        alt={data.species.name}
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {data.abilities.map((ability, index) => {
-            <p key={index}>{ability.name}</p>
-          })}
-        </Typography>
-      </CardContent>
-    </Card>
+    <div>
+      {infos}
+    </div>
   )
 }
