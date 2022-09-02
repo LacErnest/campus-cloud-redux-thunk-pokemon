@@ -10,6 +10,15 @@ export default function ListPokemon(){
   const pokemons = useSelector((store) => store.pokemons)
   const loading = useSelector((store) => store.loading)
 
+
+  const getId = (url) => {
+    let monArr = url.splice('/')
+    let id = monArr[monArr.length-1]
+    console.log(id)
+    return id
+  }
+
+
   useEffect(() => {
     console.log('useeffect')
     if(pokemons.length < 1 ){
@@ -21,7 +30,7 @@ export default function ListPokemon(){
   
   const pokemonList = !pokemons.results ? 
   <p>Erreur lors de la récupération des pokemons</p> : 
-    pokemons.results.map((pokemon, index) => <div key={index}><h2>{pokemon.name}</h2> <button onClick={() => history(`/pokemon/${pokemon.url}`)}>Details</button> <br /></div>)
+    pokemons.results.map((pokemon, index) => <div key={index}><h2>{pokemon.name}</h2> <button onClick={() => history(`/pokemon/${getId(pokemon.url)}`)}>Details</button> <br /></div>)
   
   return(
     <div>
