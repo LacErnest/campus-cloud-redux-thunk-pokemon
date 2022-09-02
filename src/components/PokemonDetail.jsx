@@ -2,10 +2,10 @@ import { useParams } from "react-router-dom"
 import { useDispatch,  useSelector} from "react-redux"
 import { fetchingPokemon } from "../redux/actions/actionCreators"
 import { useEffect } from "react"
-import { styled } from "@mui/material" 
+//import { styled } from "@mui/material" 
 import {Card, CardHeader, CardMedia, CardContent, Typography, Avatar, IconButton, Icon} from "@mui/material"
 import { red } from "@mui/material/colors"
-import  MoreVertIcon from '@mui/icons-material/'
+//import  MoreVertIcon from '@mui/icons-material/'
 
 export default function PokemonDetail(){
 
