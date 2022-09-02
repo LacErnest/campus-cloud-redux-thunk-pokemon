@@ -30,7 +30,7 @@ function fetchingPokemons(){
 function fetchingPokemon(id) {
   return (dispatch) => {
     dispatch(loadingPokemon())
-
+    console.log('ICI')
     fetch(`${URL}${id}/`)
       .then(res => res.json())
       .then(pokemon => {

@@ -1,4 +1,4 @@
-import {fetchingPokemons} from '../redux/actions/actionCreators'
+import {fetchingPokemons, fetchingPokemon} from '../redux/actions/actionCreators'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
@@ -15,6 +15,7 @@ export default function ListPokemon(){
     let monArr = url.split('/')
     let id = monArr[monArr.length-2]
     console.log("id", id)
+    dispatch(fetchingPokemon(id))
     return id
   }
 

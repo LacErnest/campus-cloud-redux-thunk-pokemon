@@ -19,9 +19,9 @@ export default function PokemonDetail(){
     console.log("data", data)
   }, [])
 
-  console.log("hors useeffect", data)
+  console.log("hors useeffect detail", data)
 
-  const infos = data ? <div>Chargement des informations...</div> : <Card>
+  const infos = loading ? <div>Chargement des informations...</div> : <Card>
     <CardHeader
       avatar={
         <Avatar sx={{ bgcolor: red }} >
@@ -38,7 +38,7 @@ export default function PokemonDetail(){
     <CardMedia
       component="img"
       height="auto"
-      image={data.sprites.versions.generation - v.black - white.animated.front_default}
+      image={data.sprites.versions['generation-v']['black-white']['animated']['front_default']}
       alt={data.species.name}
     />
     <CardContent>
